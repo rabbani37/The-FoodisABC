@@ -2,7 +2,7 @@
 
 
 const Navbar = () => {
-    const navList = <ul className="lg:rounded-none shadow lg:shadow-none rounded-box menu menu-horizontal px-1 dropdown-content bg-base-100 text-[#48448a] font-semibold z-1 mt-3  p-2  ">
+    const navList = <ul className="lg:rounded-none shadow lg:shadow-none rounded-box menu menu-horizontal px-1 dropdown-content text-[#48448a] font-semibold z-1 mt-3  p-2  ">
         <li><a>Home</a></li>
         <li><a>Recipes</a></li>
         <li><a>About</a></li>
@@ -15,7 +15,7 @@ const Navbar = () => {
 
     return (
         <div>
-            <div className="navbar bg-base-100 shadow-sm">
+            <div className="navbar bg-base-200 ">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
