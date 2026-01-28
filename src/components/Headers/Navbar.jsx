@@ -2,7 +2,7 @@
 
 
 const Navbar = () => {
-    const navList = <ul className="lg:rounded-none shadow lg:shadow-none rounded-box menu menu-horizontal px-1 dropdown-content text-[#48448a] font-semibold z-1 mt-3  p-2  ">
+    const navList = <ul className="lg:rounded-none bg-base-200 shadow lg:shadow-none rounded-box menu menu-horizontal px-1 dropdown-content text-[#48448a] font-semibold z-1 mt-3  p-2  ">
         <li><a>Home</a></li>
         <li><a>Recipes</a></li>
         <li><a>About</a></li>
