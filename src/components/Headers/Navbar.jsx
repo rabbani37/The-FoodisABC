@@ -25,8 +25,8 @@ const Navbar = () => {
                             {navList}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost ">
-                        <span className="  text-4xl text-[#48448a] "> The </span> 
+                    <a className="btn btn-ghost text-4xl text-[#48448a] ">
+                         A
                         <span className="text-3xl mt-1 text-green-500">Foodi</span>
                     </a>
                 </div>
