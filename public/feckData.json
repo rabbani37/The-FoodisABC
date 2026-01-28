@@ -1,0 +1,83 @@
+[
+  {
+    "recipe_id": 1,
+    "recipe_name": "Grilled Chicken Delight",
+    "recipe_image": "https://images.unsplash.com/photo-1600891964599-f61ba0e24092",
+    "short_description": "Juicy grilled chicken marinated with spices and herbs.",
+    "ingredients": [
+      "550 g chicken",
+      "2 tbsp olive oil",
+      "1 tsp garlic paste"
+    ],
+    "preparing_time": 30,
+    "calories": 320
+  },
+  {
+    "recipe_id": 2,
+    "recipe_name": "Creamy Mushroom Pasta",
+    "recipe_image": "https://images.unsplash.com/photo-1525755662778-989d0524087e",
+    "short_description": "Creamy pasta cooked with fresh mushrooms and sauce.",
+    "ingredients": [
+      "200 g pasta",
+      "2 burger buns",
+      "400 g mushroom",
+      "120 ml cream"
+    ],
+    "preparing_time": 25,
+    "calories": 410
+  },
+  {
+    "recipe_id": 3,
+    "recipe_name": "Classic Beef Burger",
+    "recipe_image": "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=1600&q=80",
+    "short_description": "Classic beef burger served with fresh vegetables.",
+    "ingredients": [
+      "300 g beef patty",
+      "2 burger buns",
+      "2 cheese slices",
+      "120 ml cream"
+    ],
+    "preparing_time": 20,
+    "calories": 520
+  },
+  {
+    "recipe_id": 4,
+    "recipe_name": "Vegetable Stir Fry",
+    "recipe_image": "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=1600&q=80",
+    "short_description": "Healthy vegetables stir-fried with light seasoning.",
+    "ingredients": [
+      "200 g broccoli",
+      "150 g carrot",
+      "120 ml cream",
+      "120 ml soy sauce"
+    ],
+    "preparing_time": 15,
+    "calories": 260
+  },
+  {
+    "recipe_id": 5,
+    "recipe_name": "Spicy Chicken Curry",
+    "recipe_image": "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=1600&q=80",
+    "short_description": "Spicy chicken curry cooked with traditional spices.",
+    "ingredients": [
+      "600 g chicken",
+      "2 onions",
+      "1 tbsp curry powder"
+    ],
+    "preparing_time": 40,
+    "calories": 450
+  },
+  {
+    "recipe_id": 6,
+    "recipe_name": "Fresh Garden Salad",
+    "recipe_image": "https://images.unsplash.com/photo-1543353071-873f17a7a088",
+    "short_description": "Fresh salad made with crisp garden vegetables.",
+    "ingredients": [
+      "100 g lettuce",
+      "1 cucumber",
+      "1 tomato"
+    ],
+    "preparing_time": 10,
+    "calories": 180
+  }
+]

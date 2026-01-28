@@ -8,10 +8,10 @@ const Banner = () => {
     return (
         <div className="">
             <div
-                className="hero min-h-[550px]"
+                className="hero min-h-screen"
                 style={{
                     backgroundImage:
-                        "url(banner.jpg)",
+                        "url(https://images.unsplash.com/photo-1543353071-873f17a7a088)",
                 }}
             >
                 <div className="hero-overlay"></div>
@@ -23,9 +23,8 @@ const Banner = () => {
                             We serve freshly prepared meals using quality ingredients, delivering authentic flavors, great taste,  and memorable dining experiences every single day.
                         </p>
                         <div className="space-x-10">
-                            <button className="btn  btn-success text-white">Explore Now</button>
-                            <button className="btn btn-outline text-green-500
-                             border-green-500   ">Our Feedback</button>
+                            <button className="btn  btn-success">Explore Now</button>
+                            <button className="btn btn-outline btn-success">Our Feedback</button>
                         </div>
                     </div>
                 </div>
