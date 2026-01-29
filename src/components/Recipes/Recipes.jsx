@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Recipe from "./Recipe";
 import CookeTable from "../Table/CookeTable";
 import CurrentCook from "../Table/CurrentCook";
+  import { ToastContainer, toast } from 'react-toastify';
 
 
 
@@ -20,12 +21,18 @@ const Recipes = () => {
 
     // handle want to cook
     const handleWantToCook = (recipe) => {
-        setWantRecipes([...wantRecipes, recipe])
+        const isExisting = wantRecipes.find(wRecipe => wRecipe.recipe_id === recipe.recipe_id);
+        if (isExisting) {
+            toast.error("Already exist this recipe")
+        } else {
+            toast.success("Added The Recipe")
+            setWantRecipes([...wantRecipes, recipe])
+        }
 
     }
     // handle preparing 
     const handlePreparing = (recipe) => {
-        const remaining = wantRecipes.filter(wRecipe=> wRecipe.recipe_id !== recipe.recipe_id)
+        const remaining = wantRecipes.filter(wRecipe => wRecipe.recipe_id !== recipe.recipe_id)
         setWantRecipes(remaining)
         setCurrentRecipes([...currentRecipes, recipe])
 
@@ -47,7 +54,7 @@ const Recipes = () => {
             {/* Body part */}
 
             <div className="md:flex  gap-4 ">
-                <div className="grid grid-cols-2 gap-5 ">
+                <div className="grid md:grid-cols-2 grid-cols-1 gap-5 ">
                     {
                         recipes.map((recipe, idx) => <Recipe
                             key={idx}
@@ -60,11 +67,13 @@ const Recipes = () => {
 
 
                 {/* SideBar  */}
-                <div className=" border border-gray-400 rounded-md lg:flex-1">
+                <div className=" border border-gray-400 rounded-md ">
 
 
                     <div className="text-center flex flex-col ">
-                        <h3 className="my-3 text-xl text-[#48448a]  font-semibold">Want to cook: 00</h3>
+                        <ToastContainer />
+                        <h3 className="my-3 text-xl text-[#48448a]  font-semibold">
+                            Want to cook: {wantRecipes.length}</h3>
                         <hr className='mx-10 text-gray-300 ' />
 
                         <div>
@@ -98,7 +107,8 @@ const Recipes = () => {
 
 
                     <div className="text-center flex flex-col ">
-                        <h3 className="my-3 text-xl text-[#48448a]  font-semibold">Currently cooking: 00</h3>
+                        <h3 className="my-3 text-xl text-[#48448a]  font-semibold">
+                            Currently cooking: {currentRecipes.length}</h3>
                         <hr className='mx-10 text-gray-300 ' />
 
                         <div>
