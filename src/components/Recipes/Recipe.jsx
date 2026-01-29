@@ -2,11 +2,11 @@ import { IoTimeOutline } from "react-icons/io5";
 import { FaFire } from "react-icons/fa";
 
 
-const Recipe = ({ recipe }) => {
+const Recipe = ({ recipe,handleWantToCook }) => {
 
 
     const { recipe_image, recipe_name, short_description, ingredients, calories, preparing_time } = recipe
-    console.log(recipe)
+    // console.log(recipe)
     return (
         <div className=''>
             <div className=" flex flex-col card bg-base-200 shadow-md border border-gray-300">
@@ -40,7 +40,8 @@ const Recipe = ({ recipe }) => {
                         </div>
                     </div>
                     <div className=" ">
-                        <button className="btn mt-auto rounded-3xl btn-success">Want To Cook</button>
+                        <button onClick={()=>handleWantToCook(recipe)}
+                         className="btn mt-auto rounded-3xl btn-success">Want To Cook</button>
                     </div>
                 </div>
             </div>

@@ -1,13 +1,16 @@
 import { useEffect, useState } from "react";
 import Recipe from "./Recipe";
+import CookeTable from "../Table/CookeTable";
+import CurrentCook from "../Table/CurrentCook";
+
 
 
 
 const Recipes = () => {
 
     const [recipes, setRecipes] = useState([]);
-
-
+    const [wantRecipes, setWantRecipes] = useState([]);
+    const [currentRecipes, setCurrentRecipes] = useState([]);
     useEffect(() => {
         fetch("feckData.json")
             .then(res => res.json())
@@ -15,10 +18,17 @@ const Recipes = () => {
 
     }, [])
 
-    console.log(recipes)
+    // handle want to cook
+    const handleWantToCook = (recipe) => {
+        setWantRecipes([...wantRecipes, recipe])
+    }
+    // handle preparing 
+    const handlePreparing = (recipe) => {
+        setCurrentRecipes([...currentRecipes, recipe])
 
+    }
     return (
-        <div className="container mx-auto">
+        <div className="max-w-[1240px] mx-auto">
             {/* header part */}
             <div className="text-center mt-24 mb-10 w-9/12 mx-auto">
                 <h2 className="text-[#48448a] font-bold mb-5 text-5xl">Our Recipe</h2>
@@ -30,19 +40,99 @@ const Recipes = () => {
 
             {/* Body part */}
 
-            <div className="grid grid-cols-3">
-                <div className="grid grid-cols-2 gap-5 col-span-2">
+            <div className="flex gap-4 ">
+                <div className="grid grid-cols-2 gap-5 ">
                     {
-                        recipes.map((recipe,idx) => <Recipe
+                        recipes.map((recipe, idx) => <Recipe
                             key={idx}
                             recipe={recipe}
+                            handleWantToCook={handleWantToCook}
                         ></Recipe>)
                     }
                 </div>
 
-                <div className="col-span-1">
+
+
+                {/* SideBar  */}
+                <div className=" border border-gray-400 rounded-md flex-1">
+
+
+                    <div className="text-center flex flex-col ">
+                        <h3 className="my-3 text-xl font-semibold">Want to cook: 00</h3>
+                        <hr className='mx-10 text-gray-300 ' />
+
+                        <div>
+                            <table className="table">
+                                {/* head */}
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Name</th>
+                                        <th></th>
+                                        <th className="ml-5">Time</th>
+                                        <th>Calories</th>
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                            </table>
+                            {
+                                wantRecipes.map((recipe, idx) => <CookeTable
+                                    key={idx}
+                                    recipe={recipe}
+                                    handlePreparing={handlePreparing}
+                                ></CookeTable>)
+                            }
+                        </div>
+                    </div>
+
+
+
+
+                    <div className="text-center flex flex-col ">
+                        <h3 className="my-3 text-xl font-semibold">Currently cooking: 00</h3>
+                        <hr className='mx-10 text-gray-300 ' />
+
+                        <div>
+                            <table className="table">
+                                {/* head */}
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Name</th>
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
+                                        <th className="ml-5">Time</th>
+                                        <th></th>
+                                        <th>Calories</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                            {
+                                currentRecipes.map((recipe, idx) => <CurrentCook
+                                    key={idx}
+                                    recipe={recipe}
+                                ></CurrentCook>)
+                            }
+
+                            <hr className='mx-10 text-gray-300 ' />
+                            <div className="text-gray-600 p-10  font-semibold flex mr-20 gap-16 justify-end">
+                                <p>Total Time: {currentRecipes.reduce((p, c) => p + c.preparing_time, 0)} </p>
+                                <p>Total Calories: {currentRecipes.reduce((p, c) => p + c.calories, 0)}</p>
+                            </div>
+                        </div>
+                    </div>
+
 
                 </div>
+
+
+
+
+
+
             </div>
 
 
