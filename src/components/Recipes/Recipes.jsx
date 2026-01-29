@@ -5,8 +5,8 @@ import CurrentCook from "../Table/CurrentCook";
 
 
 
-
 const Recipes = () => {
+
 
     const [recipes, setRecipes] = useState([]);
     const [wantRecipes, setWantRecipes] = useState([]);
@@ -21,12 +21,18 @@ const Recipes = () => {
     // handle want to cook
     const handleWantToCook = (recipe) => {
         setWantRecipes([...wantRecipes, recipe])
+
     }
     // handle preparing 
     const handlePreparing = (recipe) => {
+        const remaining = wantRecipes.filter(wRecipe=> wRecipe.recipe_id !== recipe.recipe_id)
+        setWantRecipes(remaining)
         setCurrentRecipes([...currentRecipes, recipe])
 
     }
+
+
+
     return (
         <div className="max-w-[1240px] mx-auto">
             {/* header part */}
@@ -40,7 +46,7 @@ const Recipes = () => {
 
             {/* Body part */}
 
-            <div className="flex gap-4 ">
+            <div className="md:flex  gap-4 ">
                 <div className="grid grid-cols-2 gap-5 ">
                     {
                         recipes.map((recipe, idx) => <Recipe
@@ -54,11 +60,11 @@ const Recipes = () => {
 
 
                 {/* SideBar  */}
-                <div className=" border border-gray-400 rounded-md flex-1">
+                <div className=" border border-gray-400 rounded-md lg:flex-1">
 
 
                     <div className="text-center flex flex-col ">
-                        <h3 className="my-3 text-xl font-semibold">Want to cook: 00</h3>
+                        <h3 className="my-3 text-xl text-[#48448a]  font-semibold">Want to cook: 00</h3>
                         <hr className='mx-10 text-gray-300 ' />
 
                         <div>
@@ -82,6 +88,7 @@ const Recipes = () => {
                                     key={idx}
                                     recipe={recipe}
                                     handlePreparing={handlePreparing}
+
                                 ></CookeTable>)
                             }
                         </div>
@@ -91,7 +98,7 @@ const Recipes = () => {
 
 
                     <div className="text-center flex flex-col ">
-                        <h3 className="my-3 text-xl font-semibold">Currently cooking: 00</h3>
+                        <h3 className="my-3 text-xl text-[#48448a]  font-semibold">Currently cooking: 00</h3>
                         <hr className='mx-10 text-gray-300 ' />
 
                         <div>
@@ -118,9 +125,9 @@ const Recipes = () => {
                             }
 
                             <hr className='mx-10 text-gray-300 ' />
-                            <div className="text-gray-600 p-10  font-semibold flex mr-20 gap-16 justify-end">
-                                <p>Total Time: {currentRecipes.reduce((p, c) => p + c.preparing_time, 0)} </p>
-                                <p>Total Calories: {currentRecipes.reduce((p, c) => p + c.calories, 0)}</p>
+                            <div className="text-gray-600 p-10  font-bold flex mr-20 gap-16 justify-end">
+                                <p>Total Time= {currentRecipes.reduce((p, c) => p + c.preparing_time, 0)} </p>
+                                <p>Total Calories= {currentRecipes.reduce((p, c) => p + c.calories, 0)}</p>
                             </div>
                         </div>
                     </div>

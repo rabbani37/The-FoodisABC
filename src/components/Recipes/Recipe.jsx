@@ -17,11 +17,11 @@ const Recipe = ({ recipe,handleWantToCook }) => {
                         className="rounded-xl max-h-48 w-full" />
                 </figure>
                 <div className="card-body grow-2 p-4">
-                    <h2 className="card-title text-2xl">{recipe_name}</h2>
+                    <h2 className="card-title text-[#48448a]  text-2xl">{recipe_name}</h2>
                     <p>{short_description}</p>
                     <hr className='text-gray-300' />
                     <div>
-                        <h4 className='text-xl'>Ingredients: {ingredients.length} </h4>
+                        <h4 className='text-xl text-[#48448a] '>Ingredients: {ingredients.length} </h4>
                         <div className='text-gray-500 pl-6 '>
                             {ingredients.map((i, idx) => <ul key={idx} className='list-disc'>
                                 <li className='lis'>{i}</li>

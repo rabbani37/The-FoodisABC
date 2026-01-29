@@ -17,7 +17,7 @@ const Banner = () => {
                 <div className="hero-overlay"></div>
                 <div className="hero-content text-neutral-content text-center">
                     <div className="max-w-2xl justify-center">
-                        <h1 className="mb-5 text-5xl font-bold leading-18">
+                        <h1 className="mb-5 text-5xl  font-bold leading-18">
                             Fresh flavors crafted daily to satisfy  your every craving</h1>
                         <p className="mb-5">
                             We serve freshly prepared meals using quality ingredients, delivering authentic flavors, great taste,  and memorable dining experiences every single day.
