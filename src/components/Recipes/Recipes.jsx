@@ -23,7 +23,7 @@ const Recipes = () => {
     const handleWantToCook = (recipe) => {
         const isExisting = wantRecipes.find(wRecipe => wRecipe.recipe_id === recipe.recipe_id);
         if (isExisting) {
-            toast.error("Already exist this recipe")
+            toast.error(`Already exist. Please Try Another Recipe`)
         } else {
             toast.success("Added The Recipe")
             setWantRecipes([...wantRecipes, recipe])
